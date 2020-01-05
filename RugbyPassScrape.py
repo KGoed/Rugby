@@ -1,31 +1,16 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
-
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
 from functools import reduce
 
-
-# In[2]:
-
-
+#Set page to get stats from
 page = requests.get('https://www.rugbypass.com/live/super-rugby/chiefs-vs-highlanders-at-fmg-stadium-waikato-on-15022019/2019/stats/')
-page
+#page
 
+#Convert page into BS object
+soup = BeautifulSoup(page.content,'html.parser')
 
-# In[3]:
-
-
-soup = BeautifulSoup(page.content)
-
-
-# In[4]:
-
-
+#Get headings of team stats that are sourced from bar graphs
 stat_bars_headings = []
 for i in soup.find_all('div',class_='label'):
     stat_string = i.text.strip()
@@ -35,10 +20,7 @@ stat_bars_headings[1] = 'Score'
 stat_bars_headings[0] = 'Team'
 #stat_bars_headings
 
-
-# In[5]:
-
-
+#Get home stats for teams from the bar graphs
 stat_bars_home= []
 for i in soup.find_all('div',class_='home'):
     stat_string = i.text.strip()
@@ -47,10 +29,7 @@ for i in soup.find_all('div',class_='home'):
 home = stat_bars_home[0]
 #stat_bars_home
 
-
-# In[6]:
-
-
+#Get away stats for teams from the bar graphs
 stat_bars_away= []
 for i in soup.find_all('div',class_='away'):
     stat_string = i.text.strip()
@@ -60,10 +39,7 @@ stat_bars_away[0], stat_bars_away[1] = stat_bars_away[1], stat_bars_away[0]
 away = stat_bars_away[0]
 #stat_bars_away
 
-
-# In[7]:
-
-
+#Convert the statss into a dataframe
 teams_list = []
 teams_list.append(stat_bars_home)
 teams_list.append(stat_bars_away)
@@ -73,27 +49,21 @@ teams.columns = stat_bars_headings
 #teams
 
 
-# In[8]:
-
-
+#Get headers of the pie graphs used for team stats
 check_list = ['Possession','Tries','Passes','Tackles','Kicks in play','Conversions','Rucks won','Rucks lost']
 pie_headers = ['Team']
-
 for i in soup.find_all('div', class_= 'key-stats-group-graph'):
     headers = i.text.split(',')
     for item in headers:
         string_check = item.replace('"','')
         if string_check in check_list:
             pie_headers.append(string_check)
-
 #pie_headers
 
 
-# In[9]:
-
-
+#Get the team stats from the pie graphs used
 pie_stats = []
-    
+   
 pie_home = [home]
 pie_away = [away]
 counter = 0
@@ -112,24 +82,16 @@ pie_stats.append(pie_home)
 pie_stats.append(pie_away)
 #pie_stats
 
-
-# In[10]:
-
-
+#Convert pie graph stats into dataframe
 teams_pies = pd.DataFrame(pie_stats)
 teams_pies.columns = pie_headers
 #teams_pies
 
 
-# In[11]:
-
-
+#Create final data frame for all team stats
 team__stats_final = pd.merge(teams,teams_pies,on='Team')
 
-
-# In[12]:
-
-
+#Get headings of all player stats
 players_headers = ['Team','Number','Name']
 for i in soup.find_all('th', class_='stat-value'):
     players_headers.append(i.get('title'))
@@ -137,10 +99,7 @@ for i in soup.find_all('th', class_='stat-value'):
 players_headers = list(dict.fromkeys(players_headers))
 #players_headers
 
-
-# In[13]:
-
-
+#Get all player stats
 check = []
 player_att_stats = []
 player_def_stats = []
@@ -226,10 +185,7 @@ for i in soup.find_all('td'):
                 stat_counter = 0                   
                 
 
-
-# In[14]:
-
-
+#Convert into dataframes
 pl_att = pd.DataFrame(player_att_stats)
 pl_att.columns = players_headers[:13]
 #pl_att
@@ -250,52 +206,8 @@ pl_dis = pd.DataFrame(player_dis_stats)
 pl_dis.columns = list(players_headers[i] for i in [0,1, 2, 23, 24, 25])
 #pl_dis
 
-
-# In[15]:
-
-
 data_frames = [pl_att, pl_def, pl_kick, pl_sp, pl_dis]
 player_stats_final = reduce(lambda left,right: pd.merge(left,right,on=['Team','Number','Name']), data_frames)
 
-
-# In[19]:
-
-
-player_stats_final
-
-
-# In[18]:
-
-
-team__stats_final
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
+#player_stats_final
+#team__stats_final
