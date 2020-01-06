@@ -25,6 +25,7 @@ links[:] = [x for x in links if 'https://www.rugbypass.com/live/super-rugby/crus
 links[:] = [x for x in links if 'https://www.rugbypass.com/live/super-rugby/reds-vs-sunwolves-at-suncorp-stadium-on-03052019/2019/stats/' not in x]
 links[:] = [x for x in links if 'https://www.rugbypass.com/live/super-rugby/hurricanes-vs-rebels-at-westpac-stadium-on-04052019/2019/stats/' not in x]
 links[:] = [x for x in links if 'https://www.rugbypass.com/live/super-rugby/highlanders-vs-chiefs-at-forsyth-barr-stadium-on-04052019/2019/stats/' not in x]
+links[:] = [x for x in links if 'https://www.rugbypass.com/live/super-rugby/brumbies-vs-blues-at-gio-stadium-on-04052019/2019/stats/' not in x]
 
 
 matches = pd.DataFrame(columns = ['Match_ID', 'Home', 'Away','Round'])
