@@ -30,4 +30,8 @@ for i in links:
 
 links = pd.DataFrame(output) 
 links.columns = ['Match_ID','Round','Status','URL']
+
+links.loc[links['Match_ID'] == 'highlanders-bulls-forsyth-barr-stadium-07062019', 'Status'] = 'No Stats'
+links.loc[links['Match_ID'] == 'highlanders-crusaders-forsyth-barr-stadium-16032019', 'Status'] = 'No Stats'
+
 links.to_csv('Links_2019.csv',index=False)

@@ -44,8 +44,6 @@ from matplotlib.spines import Spine
 from matplotlib.transforms import Affine2D
 
 
-
-
 categories=list(elton)[1:]
 N = len(categories)
  # We are going to plot the first line of the data frame.
