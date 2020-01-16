@@ -194,5 +194,3 @@ for url in matches:
         
 player_stats_final.to_csv('Player_Stats_2019.csv',index=False)
 team_stats_final.to_csv('Team_Stats_2019.csv',index=False)
-
-
