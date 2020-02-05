@@ -1,0 +1,15 @@
+Team,Score,Defenders beaten,Clean breaks,Offloads,Turnovers conceded,Missed tackles,Turnovers won,Conversions missed,Penalty goals,Penalty goals missed,Drop goals,Drop goals missed,Rucks won %,Mauls won,Lineouts lost,Scrums won,Scrums lost,Scrums won %,Penalties conceded,Possession,Territory,Tries,Passes,Tackles,Kicks in play,Conversions,Rucks won,Rucks lost,Match_ID
+BLU,29,26,10,7,22,18,3,1,1,2,0,0,63,2,2,9,0,50,8,56,60,4,151,92,11,3,118,2,blues-chiefs-eden-park-31012020
+CHI,37,17,12,10,12,33,10,2,1,0,1,0,37,5,1,9,0,50,11,44,40,5,99,181,21,3,68,0,blues-chiefs-eden-park-31012020
+BRU,27,21,4,2,13,18,12,2,1,0,0,0,46,5,3,5,1,22,10,46,49,4,110,109,14,2,72,1,brumbies-reds-gio-stadium-31012020
+RED,24,16,7,9,20,18,6,0,1,0,0,0,52,1,0,7,0,78,10,54,51,3,138,121,14,3,81,3,brumbies-reds-gio-stadium-31012020
+SHA,23,14,6,5,18,11,11,0,3,0,0,0,48,3,3,5,0,30,10,50,54,2,100,91,31,2,59,1,sharks-bulls-kings-park-stadium-31012020
+BUL,15,11,4,10,23,22,11,0,4,1,1,0,48,4,0,7,0,70,5,50,46,0,97,92,35,0,58,6,sharks-bulls-kings-park-stadium-31012020
+SUN,36,22,8,8,5,39,9,1,1,0,0,0,45,2,0,8,2,89,12,47,44,6,110,144,18,4,82,0,sunwolves-rebels-level-five-stadium-01022020
+REB,27,26,7,15,17,24,2,2,1,0,0,0,54,7,1,1,0,11,12,53,56,4,151,119,13,2,98,2,sunwolves-rebels-level-five-stadium-01022020
+CRU,43,32,10,19,21,23,12,1,1,1,0,0,54,4,1,7,0,70,10,52,53,6,138,118,27,5,96,3,crusaders-waratahs-trafalgar-park-01022020
+WAR,25,16,8,7,23,30,13,1,2,0,0,0,44,2,0,3,0,30,8,48,47,3,131,159,24,2,79,4,crusaders-waratahs-trafalgar-park-01022020
+STO,27,25,19,4,14,8,17,2,1,1,0,0,65,4,2,10,0,59,7,62,67,4,105,85,20,2,97,1,stormers-hurricanes-newlands-01022020
+HUR,0,12,5,4,17,21,7,0,0,0,0,0,35,2,1,7,0,41,11,38,33,0,71,145,20,0,53,0,stormers-hurricanes-newlands-01022020
+JAG,38,33,11,19,13,12,9,0,1,0,0,0,52,4,1,5,1,44,11,56,51,5,177,129,29,5,96,3,jaguares-lions-estadio-jose-amalfitani-02022020
+LIO,8,12,3,6,13,36,5,1,1,1,0,0,48,6,1,5,1,56,7,44,49,1,139,140,22,0,90,0,jaguares-lions-estadio-jose-amalfitani-02022020
